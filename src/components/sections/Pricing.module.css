@@ -1,0 +1,179 @@
+.wrapper {
+  background-color: var(--color-surface);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.header h2 {
+  font-size: 3rem;
+  color: var(--color-text);
+  margin-bottom: 24px;
+}
+
+.toggleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  font-size: 1.1rem;
+}
+
+.toggle {
+  position: relative;
+  width: 60px;
+  height: 32px;
+  background-color: var(--color-surface-light);
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.toggleCircle {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 24px;
+  height: 24px;
+  background-color: var(--color-accent);
+  border-radius: 50%;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.toggle.yearly .toggleCircle {
+  transform: translateX(28px);
+}
+
+.grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: var(--color-base);
+  border: 1px solid var(--color-surface-light);
+  border-radius: 12px;
+  padding: 40px;
+  width: 350px;
+  position: relative;
+  transition: transform 0.3s ease;
+  transform-style: preserve-3d;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Simulated 3D tilt with just transform on hover if no JS (enhanced in JS later) */
+.card:hover {
+  border-color: rgba(255,107,53, 0.5);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.card.popular {
+  border-color: var(--color-accent);
+  transform: scale(1.05);
+}
+
+.card.popular:hover {
+  transform: scale(1.05) translateY(-5px);
+}
+
+.badge {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-accent);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-family: var(--font-bebas);
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+}
+
+.tierName {
+  font-family: var(--font-bebas);
+  font-size: 2rem;
+  color: var(--color-text);
+  margin-bottom: 8px;
+}
+
+.price {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.currency {
+  font-size: 1.5rem;
+  margin-right: 4px;
+  color: var(--color-text-muted);
+  margin-bottom: 12px;
+}
+
+.period {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  font-weight: 400;
+  margin-left: 4px;
+  margin-bottom: 12px;
+}
+
+.desc {
+  color: var(--color-text-muted);
+  margin-bottom: 24px;
+  min-height: 48px;
+}
+
+.features {
+  list-style: none;
+  margin-bottom: 40px;
+  flex-grow: 1;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  color: #DDD;
+}
+
+.checkIcon {
+  color: var(--color-accent);
+}
+
+.feature.disabled {
+  color: #555;
+}
+
+.feature.disabled .checkIcon {
+  color: #555;
+}
+
+.selectBtn {
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .card.popular {
+    transform: scale(1);
+  }
+  .card.popular:hover {
+    transform: translateY(-5px);
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 100%;
+    max-width: 400px;
+  }
+}

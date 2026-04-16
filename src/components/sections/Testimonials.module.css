@@ -1,0 +1,156 @@
+.wrapper {
+  background-color: var(--color-base);
+  overflow: hidden;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.header h2 {
+  font-size: 3rem;
+  color: var(--color-text);
+  margin-bottom: 16px;
+}
+
+.scrollContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Auto-scrolling row for text reviews */
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+}
+
+.marqueeContent {
+  display: flex;
+  gap: 24px;
+  animation: scrollLeft 40s linear infinite;
+}
+
+.marqueeContent.reverse {
+  animation: scrollRight 40s linear infinite;
+}
+
+.marquee:hover .marqueeContent {
+  animation-play-state: paused;
+}
+
+@keyframes scrollLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scrollRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.reviewCard {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-surface-light);
+  border-radius: 8px;
+  padding: 32px;
+  min-width: 400px;
+  flex-shrink: 0;
+}
+
+.stars {
+  color: var(--color-accent);
+  margin-bottom: 16px;
+  display: flex;
+  gap: 4px;
+}
+
+.reviewText {
+  color: var(--color-text);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  font-style: italic;
+}
+
+.reviewer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.reviewerImg {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.reviewerName {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.reviewerRole {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+/* Video Thumbnails */
+.videoGrid {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 64px;
+  flex-wrap: wrap;
+}
+
+.videoCard {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.videoCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.videoCard:hover img {
+  transform: scale(1.05);
+}
+
+.playBtn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  background-color: rgba(255, 107, 53, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.videoCard:hover .playBtn {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .reviewCard {
+    min-width: 300px;
+    padding: 24px;
+  }
+}

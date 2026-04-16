@@ -1,0 +1,60 @@
+.wrapper {
+  background-color: var(--color-accent);
+  padding: 32px 0;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.copy h3 {
+  font-size: 2rem;
+  margin: 0;
+  color: #fff;
+}
+
+.copy p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+}
+
+.inlineForm {
+  display: flex;
+  gap: 16px;
+  flex-grow: 1;
+  max-width: 600px;
+}
+
+.inlineForm input {
+  background-color: #fff;
+  color: var(--color-base);
+  border: none;
+}
+
+.inlineForm input::placeholder {
+  color: #888;
+}
+
+.submitBtn {
+  background-color: var(--color-base);
+  color: #fff;
+  white-space: nowrap;
+}
+
+.submitBtn:hover {
+  background-color: #000;
+}
+
+@media (max-width: 768px) {
+  .inlineForm {
+    flex-direction: column;
+  }
+}
