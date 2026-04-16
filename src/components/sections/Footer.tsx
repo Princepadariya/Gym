@@ -15,10 +15,10 @@ export default function Footer() {
             <h2>[GYM NAME]</h2>
             <p>Forging elite athletes and transforming lives since [FOUNDED YEAR]. Your journey to greatness starts here.</p>
             <div className={styles.socials}>
-                <a href="https://instagram.com/[INSTAGRAM HANDLE]" className={styles.socialBtn} aria-label="Instagram">IG</a>
-                <a href="#" className={styles.socialBtn} aria-label="Facebook">FB</a>
-                <a href="#" className={styles.socialBtn} aria-label="Twitter">TW</a>
-                <a href="#" className={styles.socialBtn} aria-label="Youtube">YT</a>
+              <a href="https://instagram.com/[INSTAGRAM HANDLE]" className={styles.socialBtn} aria-label="Instagram"><Instagram size={20} /></a>
+              <a href="#" className={styles.socialBtn} aria-label="Facebook"><Facebook size={20} /></a>
+              <a href="#" className={styles.socialBtn} aria-label="Twitter"><Twitter size={20} /></a>
+              <a href="#" className={styles.socialBtn} aria-label="Youtube"><Youtube size={20} /></a>
             </div>
           </div>
 
