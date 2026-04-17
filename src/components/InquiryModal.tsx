@@ -4,7 +4,7 @@ import { useState } from "react";
 import styles from "./Shared.module.css";
 import { X, Lock } from "lucide-react";
 import { useForm } from "react-hook-form";
-import emailjs from "@emailjs/browser";
+// import emailjs from "@emailjs/browser";
 
 interface ModalProps {
   isOpen: boolean;
@@ -23,7 +23,7 @@ export default function InquiryModal({ isOpen, onClose }: ModalProps) {
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
 
-  const onSubmit = async (data: FormData) => {
+  const onSubmit = async () => {
     setSubmitting(true);
     // Replace with real EmailJS credentials
     try {

@@ -28,9 +28,6 @@ export default function CustomCursor() {
 
     window.addEventListener("mousemove", onMouseMove);
 
-    // Magnetic buttons setup
-    const magneticElements = document.querySelectorAll("a, button");
-    
     const onMouseEnter = () => enhanceCursor();
     const onMouseLeave = (e: Event) => {
       resetCursor();

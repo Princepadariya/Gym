@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef } from "react";
 import Lenis from "lenis";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -20,11 +20,8 @@ function ClientLayoutContent({ children }: { children: React.ReactNode }) {
   const { isModalOpen, openModal, closeModal } = useModal();
 
   const modalTriggeredRef = useRef(false);
-  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    setIsClient(true);
-    
     // Check for reduced motion
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReducedMotion) {
